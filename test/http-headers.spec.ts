@@ -56,4 +56,22 @@ describe('HttpHeaders', () => {
       });
     });
   });
+
+  it('Correctly formats all three of age, clear-site-data, and cache control', () => {
+    const headers = new HttpHeaders({
+      Age: builder => builder.setAge(123),
+      'Cache-Control': builder =>
+        builder
+          .setImmutable(true)
+          .setIsPublic(true)
+          .setMaxAge(3600),
+      'Clear-Site-Data': builder => builder.setDirective('cache', true),
+    });
+
+    expect(headers.getHeadersObject()).toEqual({
+      Age: '123',
+      'Cache-Control': 'max-age=3600, public, immutable',
+      'Clear-Site-Data': 'cache',
+    });
+  });
 });
