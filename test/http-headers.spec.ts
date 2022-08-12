@@ -74,4 +74,16 @@ describe('HttpHeaders', () => {
       'Clear-Site-Data': 'cache',
     });
   });
+
+  describe('When the "Expires" property header is configured', () => {
+    it('Returns an object with the "Expires" property', () => {
+      const headers = new HttpHeaders({
+        Expires: builder => builder.setExpiry(new Date(Date.UTC(2020, 0, 1))),
+      });
+
+      expect(headers.getHeadersObject()).toEqual({
+        Expires: 'Wed, 01 Jan 2020 00:00:00 GMT',
+      });
+    });
+  });
 });
