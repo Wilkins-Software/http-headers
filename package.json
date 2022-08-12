@@ -19,7 +19,7 @@
     "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
-    "publish:np": "np"
+    "publish:np": "np  --no-yarn"
   },
   "peerDependencies": {},
   "husky": {
