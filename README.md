@@ -1,6 +1,7 @@
-<div style="display: flex;">
 [![CI](https://github.com/Wilkins-Software/http-headers/actions/workflows/main.yml/badge.svg)](https://github.com/Wilkins-Software/http-headers/actions/workflows/main.yml)
 [![size](https://github.com/Wilkins-Software/http-headers/actions/workflows/size.yml/badge.svg)](https://github.com/Wilkins-Software/http-headers/actions/workflows/size.yml)
+
+<div style="display: flex;">
   <img src="https://img.shields.io/github/issues/Wilkins-Software/http-headers" />
   <img src="https://img.shields.io/github/forks/Wilkins-Software/http-headers" />
   <img src="https://img.shields.io/github/stars/Wilkins-Software/http-headers" />
