@@ -37,3 +37,18 @@ describe('static', () => {
     });
   });
 });
+
+describe('Max-age time converters', () => {
+  it('allows you to use a built in time converter to set max-age (method)', () => {
+    const cacheControl = new CacheControlHeader({});
+    cacheControl.setMaxAge(({ minutes }) => minutes(1));
+    expect(cacheControl.build()).toBe('max-age=60');
+  });
+
+  it('allows you to use a built in time converter to set max-age (constructor)', () => {
+    const cacheControl = new CacheControlHeader({
+      maxAge: ({ minutes }) => minutes(1),
+    });
+    expect(cacheControl.build()).toBe('max-age=60');
+  });
+});

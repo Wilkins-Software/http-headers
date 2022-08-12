@@ -1,6 +1,11 @@
 import { compact } from 'lodash';
 import { BaseHeader } from './base-header.class';
 import * as TimeConverters from '@wilkins-software/time-conversion-helpers';
+
+type SecondsConvertible = (
+  timeConverters: typeof TimeConverters
+) => { toSeconds: () => number };
+
 /**
  * Class implementation of the response directives listed here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control
  */
@@ -35,16 +40,24 @@ export class CacheControlHeader extends BaseHeader {
   getMaxAge(): number | undefined {
     return this._maxAge;
   }
-  setMaxAge(value: number | undefined) {
-    this._maxAge = value;
+  setMaxAge(value: number | undefined | SecondsConvertible) {
+    if (typeof value === 'function') {
+      this._maxAge = value(TimeConverters).toSeconds();
+    } else {
+      this._maxAge = value;
+    }
     return this;
   }
   /* ----------------------------------------------------- */
   getSharedMaxAge(): number | undefined {
     return this._sharedMaxAge;
   }
-  setSharedMaxAge(value: number | undefined) {
-    this._sharedMaxAge = value;
+  setSharedMaxAge(value: number | undefined | SecondsConvertible) {
+    if (typeof value === 'function') {
+      this._sharedMaxAge = value(TimeConverters).toSeconds();
+    } else {
+      this._sharedMaxAge = value;
+    }
     return this;
   }
   /* ----------------------------------------------------- */
@@ -207,16 +220,8 @@ export class CacheControlHeader extends BaseHeader {
     staleWhileRevalidate,
     staleIfError,
   }: {
-    maxAge?:
-      | CacheControlHeader['_maxAge']
-      | ((
-          timeConverters: typeof TimeConverters
-        ) => { toSeconds: () => number });
-    sharedMaxAge?:
-      | CacheControlHeader['_sharedMaxAge']
-      | ((
-          timeConverters: typeof TimeConverters
-        ) => { toSeconds: () => number });
+    maxAge?: CacheControlHeader['_maxAge'] | SecondsConvertible;
+    sharedMaxAge?: CacheControlHeader['_sharedMaxAge'] | SecondsConvertible;
     noCache?: CacheControlHeader['_noCache'];
     mustRevalidate?: CacheControlHeader['_mustRevalidate'];
     proxyMustRevalidate?: CacheControlHeader['_proxyMustRevalidate'];
@@ -230,18 +235,8 @@ export class CacheControlHeader extends BaseHeader {
     staleIfError?: CacheControlHeader['_staleIfError'];
   }) {
     super();
-    if (typeof maxAge === 'function') {
-      this.setMaxAge(maxAge(TimeConverters).toSeconds());
-    } else {
-      this.setMaxAge(maxAge);
-    }
-
-    if (typeof sharedMaxAge === 'function') {
-      this.setSharedMaxAge(sharedMaxAge(TimeConverters).toSeconds());
-    } else {
-      this.setSharedMaxAge(sharedMaxAge);
-    }
-
+    this.setMaxAge(maxAge);
+    this.setSharedMaxAge(sharedMaxAge);
     if (noCache) this.setNoCache(noCache);
     if (mustRevalidate) this.setMustRevalidate(mustRevalidate);
     if (proxyMustRevalidate) this.setProxyMustRevalidate(proxyMustRevalidate);
