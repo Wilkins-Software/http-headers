@@ -1,8 +1,9 @@
-<img src="https://img.shields.io/github/issues/Wilkins-Software/http-headers" />
-<img src="https://img.shields.io/github/forks/Wilkins-Software/http-headers" />
-<img src="https://img.shields.io/github/stars/Wilkins-Software/http-headers" />
-<img src="https://img.shields.io/github/license/Wilkins-Software/http-headers" />
-<img src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FWilkins-Software%2Fhttp-headers" />
+<div style="display: flex;">
+  <img src="https://img.shields.io/github/issues/Wilkins-Software/http-headers" />
+  <img src="https://img.shields.io/github/forks/Wilkins-Software/http-headers" />
+  <img src="https://img.shields.io/github/stars/Wilkins-Software/http-headers" />
+  <img src="https://img.shields.io/github/license/Wilkins-Software/http-headers" />
+</div>
 
 ### Bundle Analysis
 
