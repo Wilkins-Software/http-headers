@@ -1,4 +1,4 @@
-import { BaseHeader } from './base-header';
+import { BaseHeader } from './base-header.class';
 
 export class Age extends BaseHeader {
   /** _age = <delta-seconds>. Ex. How long has this been in the server cache (in seconds) */
