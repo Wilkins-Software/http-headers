@@ -17,7 +17,8 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "publish:np": "np"
   },
   "peerDependencies": {},
   "husky": {
@@ -31,7 +32,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "http-headers",
+  "name": "@wilkins-software/http-headers",
   "author": "Mark Wilkins",
   "module": "dist/http-headers.esm.js",
   "size-limit": [
@@ -47,6 +48,7 @@
   "devDependencies": {
     "@size-limit/preset-small-lib": "^8.0.1",
     "husky": "^8.0.1",
+    "np": "^7.6.2",
     "size-limit": "^8.0.1",
     "tsdx": "^0.14.1",
     "tslib": "^2.4.0",
