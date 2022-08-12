@@ -11,4 +11,15 @@ describe('Age', () => {
       Age: '123',
     });
   });
+
+  it('Allows you to construct the age with a builder function', () => {
+    const daysAge = new Age(({ days }) => days(1));
+    expect(daysAge.build()).toBe('86400');
+
+    const secondsAge = new Age(({ minutes }) => minutes(1));
+    expect(secondsAge.build()).toBe('60');
+
+    const hoursAge = new Age(({ hours }) => hours(1));
+    expect(hoursAge.build()).toBe('3600');
+  });
 });
