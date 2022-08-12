@@ -1,285 +1,159 @@
 import { compact } from 'lodash';
+import { BaseHeader } from './base-header';
 
 /**
  * Class implementation of the response directives listed here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control
  */
-export class CacheControlHeader {
-  /**
-   * The max-age=N response directive indicates that the response remains fresh until N seconds after the response is generated.
-   */
+export class CacheControlHeader extends BaseHeader {
+  /** The max-age=N response directive indicates that the response remains fresh until N seconds after the response is generated. */
   private _maxAge?: number | undefined;
-  /**
-   * The max-age=N response directive indicates that the response remains fresh until N seconds after the response is generated.
-   */
-  public get maxAge(): number | undefined {
+  /** The s-maxage response directive also indicates how long the response is fresh for (similar to max-age) — but it is specific to shared caches, and they will ignore max-age when it is present. */
+  private _sharedMaxAge?: number | undefined;
+  /** The no-cache response directive indicates that the response can be stored in caches, but the response must be validated with the origin server before each reuse, even when the cache is disconnected from the origin server. */
+  private _noCache: boolean = false;
+  /** The must-revalidate response directive indicates that the response can be stored in caches and can be reused while fresh. If the response becomes stale, it must be validated with the origin server before reuse. Typically, must-revalidate is used with max-age. */
+  private _mustRevalidate: boolean = false;
+  /** The proxy-revalidate response directive is the equivalent of must-revalidate, but specifically for shared caches only. */
+  private _proxyMustRevalidate: boolean = false;
+  /** The no-store response directive indicates that any caches of any kind (private or shared) should not store this response. */
+  private _noStore: boolean = false;
+  /** The private response directive indicates that the response can be stored only in a private cache (e.g. local caches in browsers). */
+  private _isPrivate: boolean = false;
+  /** The public response directive indicates that the response can be stored in a shared cache. Responses for requests with Authorization header fields must not be stored in a shared cache; however, the public directive will cause such responses to be stored in a shared cache. */
+  private _isPublic: boolean = false;
+  /** The must-understand response directive indicates that a cache should store the response only if it understands the requirements for caching based on status code. must-understand should be coupled with no-store for fallback behavior. */
+  private _mustUnderstand: boolean = false;
+  /** Some intermediaries transform content for various reasons. For example, some convert images to reduce transfer size. In some cases, this is undesirable for the content provider. no-transform indicates that any intermediary (regardless of whether it implements a cache) shouldn't transform the response contents. Note: Google's Web Light is one kind of such an intermediary. It converts images to minimize data for a cache store or slow connection and supports no-transform as an opt-out option. */
+  private _noTransform: boolean = false;
+  /** The immutable response directive indicates that the response will not be updated while it's fresh. */
+  private _immutable: boolean = false;
+  /** The stale-while-revalidate response directive indicates that the cache could reuse a stale response while it revalidates it to a cache. */
+  private _staleWhileRevalidate: boolean = false;
+  /** The stale-if-error response directive indicates that the cache can reuse a stale response when an origin server responds with an error (500, 502, 503, or 504). */
+  private _staleIfError: boolean = false;
+
+  getMaxAge(): number | undefined {
     return this._maxAge;
   }
-  /**
-   * The max-age=N response directive indicates that the response remains fresh until N seconds after the response is generated.
-   */
-  public set maxAge(value: number | undefined) {
+  setMaxAge(value: number | undefined) {
     this._maxAge = value;
+    return this;
   }
-  /*
-  -----------------------------------------------------
-  */
-  /**
-   * The s-maxage response directive also indicates how long the response is fresh for (similar to max-age) — but it is specific to shared caches, and they will ignore max-age when it is present.
-   */
-  private _sharedMaxAge?: number | undefined;
-  /**
-   * The s-maxage response directive also indicates how long the response is fresh for (similar to max-age) — but it is specific to shared caches, and they will ignore max-age when it is present.
-   */
-  public get sharedMaxAge(): number | undefined {
+  /* ----------------------------------------------------- */
+  getSharedMaxAge(): number | undefined {
     return this._sharedMaxAge;
   }
-  /**
-   * The s-maxage response directive also indicates how long the response is fresh for (similar to max-age) — but it is specific to shared caches, and they will ignore max-age when it is present.
-   */
-  public set sharedMaxAge(value: number | undefined) {
+  setSharedMaxAge(value: number | undefined) {
     this._sharedMaxAge = value;
+    return this;
   }
-  /*
-  -----------------------------------------------------
-  */
-  /**
-   * The no-cache response directive indicates that the response can be stored in caches, but the response must be validated with the origin server before each reuse, even when the cache is disconnected from the origin server.
-   */
-  private _noCache: boolean = false;
-  /**
-   * The no-cache response directive indicates that the response can be stored in caches, but the response must be validated with the origin server before each reuse, even when the cache is disconnected from the origin server.
-   */
-  public get noCache(): boolean {
+  /* ----------------------------------------------------- */
+  getNoCache(): boolean {
     return this._noCache;
   }
-  /**
-   * The no-cache response directive indicates that the response can be stored in caches, but the response must be validated with the origin server before each reuse, even when the cache is disconnected from the origin server.
-   */
-  public set noCache(value: boolean) {
+  setNoCache(value: boolean) {
     this._noCache = value;
+    return this;
   }
-  /*
-  -----------------------------------------------------
-  */
-  /**
-   * The must-revalidate response directive indicates that the response can be stored in caches and can be reused while fresh. If the response becomes stale, it must be validated with the origin server before reuse.
-   * Typically, must-revalidate is used with max-age.
-   */
-  private _mustRevalidate: boolean = false;
-  /**
-   * The must-revalidate response directive indicates that the response can be stored in caches and can be reused while fresh. If the response becomes stale, it must be validated with the origin server before reuse.
-   * Typically, must-revalidate is used with max-age.
-   */
-  public get mustRevalidate(): boolean {
+  /* ----------------------------------------------------- */
+  getMustRevalidate(): boolean {
     return this._mustRevalidate;
   }
-  /**
-   * The must-revalidate response directive indicates that the response can be stored in caches and can be reused while fresh. If the response becomes stale, it must be validated with the origin server before reuse.
-   * Typically, must-revalidate is used with max-age.
-   */
-  public set mustRevalidate(value: boolean) {
+  setMustRevalidate(value: boolean) {
     this._mustRevalidate = value;
+    return this;
   }
-  /*
-  -----------------------------------------------------
-  */
-  /**
-   * The proxy-revalidate response directive is the equivalent of must-revalidate, but specifically for shared caches only.
-   */
-  private _proxyMustRevalidate: boolean = false;
-  /**
-   * The proxy-revalidate response directive is the equivalent of must-revalidate, but specifically for shared caches only.
-   */
-  public get proxyMustRevalidate(): boolean {
+  /* ----------------------------------------------------- */
+  getProxyMustRevalidate(): boolean {
     return this._proxyMustRevalidate;
   }
-  /**
-   * The proxy-revalidate response directive is the equivalent of must-revalidate, but specifically for shared caches only.
-   */
-  public set proxyMustRevalidate(value: boolean) {
+  setProxyMustRevalidate(value: boolean) {
     this._proxyMustRevalidate = value;
+    return this;
   }
-  /*
-  -----------------------------------------------------
-  */
-  /**
-   * The no-store response directive indicates that any caches of any kind (private or shared) should not store this response.
-   */
-  private _noStore: boolean = false;
-  /**
-   * The no-store response directive indicates that any caches of any kind (private or shared) should not store this response.
-   */
-  public get noStore(): boolean {
+  /* ----------------------------------------------------- */
+  getNoStore(): boolean {
     return this._noStore;
   }
-  /**
-   * The no-store response directive indicates that any caches of any kind (private or shared) should not store this response.
-   */
-  public set noStore(value: boolean) {
+  setNoStore(value: boolean) {
     if (value) {
-      if (this.isPrivate)
+      if (this.getIsPrivate())
         throw new Error(`Cannot set both no-store and private to true`);
-      if (this.noCache)
+      if (this.getNoCache())
         throw new Error(`Cannot set both no-store and no-cache to true`);
-      if (this.maxAge === 0)
+      if (this.getMaxAge() === 0)
         throw new Error(`Cannot set both no-store to true and max-age to 0`);
-      if (this.mustRevalidate)
+      if (this.getMustRevalidate())
         throw new Error(`Cannot set both no-store and must-revalidate to true`);
     }
-
     this._noStore = value;
+    return this;
   }
-  /*
-  -----------------------------------------------------
-  */
-  /**
-   * The private response directive indicates that the response can be stored only in a private cache (e.g. local caches in browsers).
-   */
-  private _isPrivate: boolean = false;
-  /**
-   * The private response directive indicates that the response can be stored only in a private cache (e.g. local caches in browsers).
-   */
-  public get isPrivate(): boolean {
+  /* ----------------------------------------------------- */
+  getIsPrivate(): boolean {
     return this._isPrivate;
   }
-  /**
-   * The private response directive indicates that the response can be stored only in a private cache (e.g. local caches in browsers).
-   */
-  public set isPrivate(value: boolean) {
+  setIsPrivate(value: boolean) {
     if (this._isPublic !== !value) {
       this._isPublic = !value;
     }
     this._isPrivate = value;
+    return this;
   }
-  /*
-  -----------------------------------------------------
-  */
-  /**
-   * The public response directive indicates that the response can be stored in a shared cache. Responses for requests with Authorization header fields must not be stored in a shared cache; however, the public directive will cause such responses to be stored in a shared cache.
-   */
-  private _isPublic: boolean = false;
-  /**
-   * The public response directive indicates that the response can be stored in a shared cache. Responses for requests with Authorization header fields must not be stored in a shared cache; however, the public directive will cause such responses to be stored in a shared cache.
-   */
-  public get isPublic(): boolean {
+  /* ----------------------------------------------------- */
+  getIsPublic(): boolean {
     return this._isPublic;
   }
-  /**
-   * The public response directive indicates that the response can be stored in a shared cache. Responses for requests with Authorization header fields must not be stored in a shared cache; however, the public directive will cause such responses to be stored in a shared cache.
-   */
-  public set isPublic(value: boolean) {
+  setIsPublic(value: boolean) {
     if (this._isPrivate !== !value) {
       this._isPrivate = !value;
     }
     this._isPublic = value;
+    return this;
   }
   /*
   -----------------------------------------------------
   */
-  /**
-   * The must-understand response directive indicates that a cache should store the response only if it understands the requirements for caching based on status code.
-   * must-understand should be coupled with no-store for fallback behavior.
-   */
-  private _mustUnderstand: boolean = false;
-  /**
-   * The must-understand response directive indicates that a cache should store the response only if it understands the requirements for caching based on status code.
-   * must-understand should be coupled with no-store for fallback behavior.
-   */
-  public get mustUnderstand(): boolean {
+  getMustUnderstand(): boolean {
     return this._mustUnderstand;
   }
-  /**
-   * The must-understand response directive indicates that a cache should store the response only if it understands the requirements for caching based on status code.
-   * must-understand should be coupled with no-store for fallback behavior.
-   */
-  public set mustUnderstand(value: boolean) {
+  setMustUnderstand(value: boolean) {
     this._mustUnderstand = value;
+    return this;
   }
-  /*
-  -----------------------------------------------------
-  */
-  /**
-   * Some intermediaries transform content for various reasons. For example, some convert images to reduce transfer size. In some cases, this is undesirable for the content provider.
-   * no-transform indicates that any intermediary (regardless of whether it implements a cache) shouldn't transform the response contents.
-   * Note: Google's Web Light is one kind of such an intermediary. It converts images to minimize data for a cache store or slow connection and supports no-transform as an opt-out option.
-   */
-  private _noTransform: boolean = false;
-  /**
-   * Some intermediaries transform content for various reasons. For example, some convert images to reduce transfer size. In some cases, this is undesirable for the content provider.
-   * no-transform indicates that any intermediary (regardless of whether it implements a cache) shouldn't transform the response contents.
-   * Note: Google's Web Light is one kind of such an intermediary. It converts images to minimize data for a cache store or slow connection and supports no-transform as an opt-out option.
-   */
-  public get noTransform(): boolean {
+  /* ----------------------------------------------------- */
+  getNoTransform(): boolean {
     return this._noTransform;
   }
-  /**
-   * Some intermediaries transform content for various reasons. For example, some convert images to reduce transfer size. In some cases, this is undesirable for the content provider.
-   * no-transform indicates that any intermediary (regardless of whether it implements a cache) shouldn't transform the response contents.
-   * Note: Google's Web Light is one kind of such an intermediary. It converts images to minimize data for a cache store or slow connection and supports no-transform as an opt-out option.
-   */
-  public set noTransform(value: boolean) {
+  setNoTransform(value: boolean) {
     this._noTransform = value;
+    return this;
   }
-  /*
-  -----------------------------------------------------
-  */
-  /**
-   * The immutable response directive indicates that the response will not be updated while it's fresh.
-   */
-  private _immutable: boolean = false;
-  /**
-   * The immutable response directive indicates that the response will not be updated while it's fresh.
-   */
-  public get immutable(): boolean {
+  /* ----------------------------------------------------- */
+  getImmutable(): boolean {
     return this._immutable;
   }
-  /**
-   * The immutable response directive indicates that the response will not be updated while it's fresh.
-   */
-  public set immutable(value: boolean) {
+  setImmutable(value: boolean) {
     this._immutable = value;
+    return this;
   }
-  /*
-  -----------------------------------------------------
-  */
-  /**
-   * The stale-while-revalidate response directive indicates that the cache could reuse a stale response while it revalidates it to a cache.
-   */
-  private _staleWhileRevalidate: boolean = false;
-  /**
-   * The stale-while-revalidate response directive indicates that the cache could reuse a stale response while it revalidates it to a cache.
-   */
-  public get staleWhileRevalidate(): boolean {
+  /* ----------------------------------------------------- */
+  getStaleWhileRevalidate(): boolean {
     return this._staleWhileRevalidate;
   }
-  /**
-   * The stale-while-revalidate response directive indicates that the cache could reuse a stale response while it revalidates it to a cache.
-   */
-  public set staleWhileRevalidate(value: boolean) {
+  setStaleWhileRevalidate(value: boolean) {
     this._staleWhileRevalidate = value;
+    return this;
   }
-  /*
-  -----------------------------------------------------
-  */
-  /**
-   * The stale-if-error response directive indicates that the cache can reuse a stale response when an origin server responds with an error (500, 502, 503, or 504).
-   */
-  private _staleIfError: boolean = false;
-  /**
-   * The stale-if-error response directive indicates that the cache can reuse a stale response when an origin server responds with an error (500, 502, 503, or 504).
-   */
-  public get staleIfError(): boolean {
+  /* ----------------------------------------------------- */
+  getStaleIfError(): boolean {
     return this._staleIfError;
   }
-  /**
-   * The stale-if-error response directive indicates that the cache can reuse a stale response when an origin server responds with an error (500, 502, 503, or 504).
-   */
-  public set staleIfError(value: boolean) {
+  setStaleIfError(value: boolean) {
     this._staleIfError = value;
+    return this;
   }
-  /*
-  -----------------------------------------------------
-  */
+  /* ----------------------------------------------------- */
   build() {
     const directives = {
       'no-cache': this._noCache,
@@ -312,7 +186,7 @@ export class CacheControlHeader {
     return compact(headerSegmentArray).join(', ');
   }
 
-  public getHeadersObject() {
+  getHeadersObject() {
     return {
       'Cache-Control': this.build(),
     };
@@ -333,33 +207,35 @@ export class CacheControlHeader {
     staleWhileRevalidate,
     staleIfError,
   }: {
-    maxAge?: CacheControlHeader['maxAge'];
-    sharedMaxAge?: CacheControlHeader['sharedMaxAge'];
-    noCache?: CacheControlHeader['noCache'];
-    mustRevalidate?: CacheControlHeader['mustRevalidate'];
-    proxyMustRevalidate?: CacheControlHeader['proxyMustRevalidate'];
-    noStore?: CacheControlHeader['noStore'];
-    isPrivate?: CacheControlHeader['isPrivate'];
-    isPublic?: CacheControlHeader['isPublic'];
-    mustUnderstand?: CacheControlHeader['mustUnderstand'];
-    noTransform?: CacheControlHeader['noTransform'];
-    immutable?: CacheControlHeader['immutable'];
-    staleWhileRevalidate?: CacheControlHeader['staleWhileRevalidate'];
-    staleIfError?: CacheControlHeader['staleIfError'];
+    maxAge?: CacheControlHeader['_maxAge'];
+    sharedMaxAge?: CacheControlHeader['_sharedMaxAge'];
+    noCache?: CacheControlHeader['_noCache'];
+    mustRevalidate?: CacheControlHeader['_mustRevalidate'];
+    proxyMustRevalidate?: CacheControlHeader['_proxyMustRevalidate'];
+    noStore?: CacheControlHeader['_noStore'];
+    isPrivate?: CacheControlHeader['_isPrivate'];
+    isPublic?: CacheControlHeader['_isPublic'];
+    mustUnderstand?: CacheControlHeader['_mustUnderstand'];
+    noTransform?: CacheControlHeader['_noTransform'];
+    immutable?: CacheControlHeader['_immutable'];
+    staleWhileRevalidate?: CacheControlHeader['_staleWhileRevalidate'];
+    staleIfError?: CacheControlHeader['_staleIfError'];
   }) {
-    this.maxAge = maxAge;
-    this.sharedMaxAge = sharedMaxAge;
-    if (noCache) this.noCache = noCache;
-    if (mustRevalidate) this.mustRevalidate = mustRevalidate;
-    if (proxyMustRevalidate) this.proxyMustRevalidate = proxyMustRevalidate;
-    if (noStore) this.noStore = noStore;
-    if (isPrivate) this.isPrivate = isPrivate;
-    if (isPublic) this.isPublic = isPublic;
-    if (mustUnderstand) this.mustUnderstand = mustUnderstand;
-    if (noTransform) this.noTransform = noTransform;
-    if (immutable) this.immutable = immutable;
-    if (staleWhileRevalidate) this.staleWhileRevalidate = staleWhileRevalidate;
-    if (staleIfError) this.staleIfError = staleIfError;
+    super();
+    this.setMaxAge(maxAge);
+    this.setSharedMaxAge(sharedMaxAge);
+    if (noCache) this.setNoCache(noCache);
+    if (mustRevalidate) this.setMustRevalidate(mustRevalidate);
+    if (proxyMustRevalidate) this.setProxyMustRevalidate(proxyMustRevalidate);
+    if (noStore) this.setNoStore(noStore);
+    if (isPrivate) this.setIsPrivate(isPrivate);
+    if (isPublic) this.setIsPublic(isPublic);
+    if (mustUnderstand) this.setMustUnderstand(mustUnderstand);
+    if (noTransform) this.setNoTransform(noTransform);
+    if (immutable) this.setImmutable(immutable);
+    if (staleWhileRevalidate)
+      this.setStaleWhileRevalidate(staleWhileRevalidate);
+    if (staleIfError) this.setStaleIfError(staleIfError);
   }
 
   static maxAge = {

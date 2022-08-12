@@ -3,18 +3,18 @@ import { CacheControlHeader } from '../src/cache-control.class';
 describe('getters and setters', () => {
   it('Sets private to the opposite of public', () => {
     const cacheControl = new CacheControlHeader({});
-    cacheControl.isPrivate = false;
-    expect(cacheControl.isPublic).toBe(true);
-    cacheControl.isPublic = false;
-    expect(cacheControl.isPrivate).toBe(true);
+    cacheControl.setIsPrivate(false);
+    expect(cacheControl.getIsPublic()).toBe(true);
+    cacheControl.setIsPublic(false);
+    expect(cacheControl.getIsPrivate()).toBe(true);
   });
 
   it('Sets public to the opposite of private', () => {
     const cacheControl = new CacheControlHeader({});
-    cacheControl.isPublic = false;
-    expect(cacheControl.isPrivate).toBe(true);
-    cacheControl.isPrivate = false;
-    expect(cacheControl.isPublic).toBe(true);
+    cacheControl.setIsPublic(false);
+    expect(cacheControl.getIsPrivate()).toBe(true);
+    cacheControl.setIsPrivate(false);
+    expect(cacheControl.getIsPublic()).toBe(true);
   });
 });
 
