@@ -1,6 +1,6 @@
 import { compact } from 'lodash';
 import { BaseHeader } from './base-header.class';
-
+import * as TimeConverters from '@wilkins-software/time-conversion-helpers';
 /**
  * Class implementation of the response directives listed here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control
  */
@@ -207,8 +207,16 @@ export class CacheControlHeader extends BaseHeader {
     staleWhileRevalidate,
     staleIfError,
   }: {
-    maxAge?: CacheControlHeader['_maxAge'];
-    sharedMaxAge?: CacheControlHeader['_sharedMaxAge'];
+    maxAge?:
+      | CacheControlHeader['_maxAge']
+      | ((
+          timeConverters: typeof TimeConverters
+        ) => { toSeconds: () => number });
+    sharedMaxAge?:
+      | CacheControlHeader['_sharedMaxAge']
+      | ((
+          timeConverters: typeof TimeConverters
+        ) => { toSeconds: () => number });
     noCache?: CacheControlHeader['_noCache'];
     mustRevalidate?: CacheControlHeader['_mustRevalidate'];
     proxyMustRevalidate?: CacheControlHeader['_proxyMustRevalidate'];
@@ -222,8 +230,18 @@ export class CacheControlHeader extends BaseHeader {
     staleIfError?: CacheControlHeader['_staleIfError'];
   }) {
     super();
-    this.setMaxAge(maxAge);
-    this.setSharedMaxAge(sharedMaxAge);
+    if (typeof maxAge === 'function') {
+      this.setMaxAge(maxAge(TimeConverters).toSeconds());
+    } else {
+      this.setMaxAge(maxAge);
+    }
+
+    if (typeof sharedMaxAge === 'function') {
+      this.setSharedMaxAge(sharedMaxAge(TimeConverters).toSeconds());
+    } else {
+      this.setSharedMaxAge(sharedMaxAge);
+    }
+
     if (noCache) this.setNoCache(noCache);
     if (mustRevalidate) this.setMustRevalidate(mustRevalidate);
     if (proxyMustRevalidate) this.setProxyMustRevalidate(proxyMustRevalidate);
@@ -237,24 +255,6 @@ export class CacheControlHeader extends BaseHeader {
       this.setStaleWhileRevalidate(staleWhileRevalidate);
     if (staleIfError) this.setStaleIfError(staleIfError);
   }
-
-  static maxAge = {
-    miliseconds: (miliseconds: number) =>
-      new CacheControlHeader({ maxAge: miliseconds / 1000 }),
-    seconds: (seconds: number) => new CacheControlHeader({ maxAge: seconds }),
-    minutes: (minutes: number) =>
-      new CacheControlHeader({ maxAge: minutes * 60 }),
-    hours: (hours: number) =>
-      new CacheControlHeader({ maxAge: hours * 60 * 60 }),
-    days: (days: number) =>
-      new CacheControlHeader({ maxAge: days * 60 * 60 * 24 }),
-    weeks: (weeks: number) =>
-      new CacheControlHeader({ maxAge: weeks * 60 * 60 * 24 * 7 }),
-    months: (months: number) =>
-      new CacheControlHeader({ maxAge: months * 60 * 60 * 24 * 30 }),
-    years: (years: number) =>
-      new CacheControlHeader({ maxAge: years * 60 * 60 * 24 * 365 }),
-  };
 
   static noCache = () => new CacheControlHeader({ noCache: true });
 }
