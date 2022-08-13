@@ -40,6 +40,6 @@ export class HttpHeaders {
         Expires: this.expires?.build(),
       },
       isNil
-    );
+    ) as Record<string, string>;
   }
 }
