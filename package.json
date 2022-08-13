@@ -21,7 +21,6 @@
     "publish:np": "np  --no-yarn",
     "generate-barrels": "barrelsby --delete -d src -l all"
   },
-  "peerDependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -58,7 +57,7 @@
   },
   "dependencies": {
     "@types/lodash": "^4.14.182",
-    "@wilkins-software/time-conversion-helpers": "^0.1.0",
+    "@wilkins-software/time-conversion-helpers": "^0.2.0",
     "lodash": "^4.17.21"
   }
 }
