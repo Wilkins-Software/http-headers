@@ -1,7 +1,7 @@
 import { BaseHeader } from './base-header.class';
 
 export class Expires extends BaseHeader {
-  private _expiry: string;
+  protected _expiry: string;
 
   constructor(expiry: Date) {
     super();
