@@ -19,7 +19,7 @@
     "size": "size-limit",
     "analyze": "size-limit --why",
     "publish:np": "np  --no-yarn",
-    "generate-barrels": "barrelsby --delete -d src -l all"
+    "generate-barrels": "barrelsby --delete -d src -l all && npm run lint -- --fix"
   },
   "husky": {
     "hooks": {
