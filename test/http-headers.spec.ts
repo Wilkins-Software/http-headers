@@ -64,7 +64,7 @@ describe('HttpHeaders', () => {
         builder
           .setImmutable(true)
           .setIsPublic(true)
-          .setMaxAge(3600),
+          .setMaxAge(({ hours }) => hours(1)),
       'Clear-Site-Data': builder => builder.setDirective('cache', true),
     });
 

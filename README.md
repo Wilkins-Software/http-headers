@@ -1,52 +1,67 @@
+
+# Wilkins-Software: Http Headers
+
+A set of classes that can be used to programatically generate HTTP headers, with convienient methods of ease of use and readability.
+
+
+## Badges
+
 [![CI](https://github.com/Wilkins-Software/http-headers/actions/workflows/main.yml/badge.svg)](https://github.com/Wilkins-Software/http-headers/actions/workflows/main.yml)
+
 [![size](https://github.com/Wilkins-Software/http-headers/actions/workflows/size.yml/badge.svg)](https://github.com/Wilkins-Software/http-headers/actions/workflows/size.yml)
 
-<div style="display: flex;">
-  <img src="https://img.shields.io/github/issues/Wilkins-Software/http-headers" />
-  <img src="https://img.shields.io/github/forks/Wilkins-Software/http-headers" />
-  <img src="https://img.shields.io/github/stars/Wilkins-Software/http-headers" />
-  <img src="https://img.shields.io/github/license/Wilkins-Software/http-headers" />
-</div>
+![](https://img.shields.io/github/issues/Wilkins-Software/http-headers)
 
-### Bundle Analysis
+![](https://img.shields.io/github/forks/Wilkins-Software/http-headers)
 
-[`size-limit`](https://github.com/ai/size-limit) is set up to calculate the real cost of your library with `npm run size` and visualize the bundle with `npm run analyze`.
+![](https://img.shields.io/github/stars/Wilkins-Software/http-headers)
 
-## Continuous Integration
+![](https://img.shields.io/github/license/Wilkins-Software/http-headers)
 
-### GitHub Actions
 
-Two actions are added by default:
+## API Reference
 
-- `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
-- `size` which comments cost comparison of your library on every pull request using [`size-limit`](https://github.com/ai/size-limit)
+#### HttpHeaders
 
-## Optimizations
+`HttpHeaders` is this Library's main export/tool. It can be instantiated with any standard response header, and can either accept a builder function or a primitive value appropriate to that header. 
 
-Please see the main `tsdx` [optimizations docs](https://github.com/palmerhq/tsdx#optimizations). In particular, know that you can take advantage of development-only optimizations:
+Builder functions are unique to each particular header, and provide methods to configure that header without having to manually interpolate strings yourself.
 
-```js
-// ./types/index.d.ts
-declare var __DEV__: boolean;
-
-// inside your code...
-if (__DEV__) {
-  console.log('foo');
+For example to generate the following header object...
+```
+{
+    'Age': '123',
+    'Cache-Control': 'max-age=3600, public, immutable',
+    'Clear-Site-Data': 'cache',
 }
 ```
 
-You can also choose to install and use [invariant](https://github.com/palmerhq/tsdx#invariant) and [warning](https://github.com/palmerhq/tsdx#warning) functions.
+You could use the builders as such:
+```typescript
+    const headers = new HttpHeaders({
+      'Age': builder => builder.setAge(123),
+      'Cache-Control': builder =>
+        builder
+          .setImmutable(true)
+          .setIsPublic(true)
+          // Note, setMaxAge is passed TimeConverters for your convenience
+          .setMaxAge(({ hours }) => hours(1)),
+      'Clear-Site-Data': builder => builder.setDirective('cache', true),
+    });
 
-## Module Formats
+```
 
-CJS, ESModules, and UMD module formats are supported.
+##### Currently Supported Headers
 
-The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
 
-## Named Exports
+| Headers           | Type     |
+| :--------         | :------- |
+| `Cache-Control`   | `string` |
+| `Age`             | `string` |
+| `Clear-Site-Data` | `string` |
+| `Expires`         | `string` |
 
-Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
+## Authors
 
-## Publishing to NPM
+- [@mark-wilkins](https://github.com/mwilkins91)
 
-We recommend using [np](https://github.com/sindresorhus/np).
