@@ -6,6 +6,8 @@ A set of classes that can be used to programatically generate HTTP headers, with
 
 ## Badges
 
+[![npm version](https://badge.fury.io/js/@wilkins-software%2Fhttp-headers.svg)](https://badge.fury.io/js/@wilkins-software%2Fhttp-headers)
+
 [![CI](https://github.com/Wilkins-Software/http-headers/actions/workflows/main.yml/badge.svg)](https://github.com/Wilkins-Software/http-headers/actions/workflows/main.yml)
 
 [![size](https://github.com/Wilkins-Software/http-headers/actions/workflows/size.yml/badge.svg)](https://github.com/Wilkins-Software/http-headers/actions/workflows/size.yml)
