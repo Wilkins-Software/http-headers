@@ -3,13 +3,13 @@ import { Age } from './age.class';
 import { CacheControlHeader } from './cache-control.class';
 import { ClearSiteData } from './clear-site-data.class';
 import { Expires } from './expires.class';
-import { HTTP_STATUS_CODE } from './http_status_codes';
+import { HTTP_STATUS_CODE } from './http-status-codes';
 
 export class HttpHeaders {
-  private cacheControl?: CacheControlHeader;
-  private age?: Age;
-  private clearSiteData?: ClearSiteData;
-  private expires?: Expires;
+  protected cacheControl?: CacheControlHeader;
+  protected age?: Age;
+  protected clearSiteData?: ClearSiteData;
+  protected expires?: Expires;
 
   public static HTTP_STATUS_CODES = HTTP_STATUS_CODE;
   constructor(
@@ -40,6 +40,6 @@ export class HttpHeaders {
         Expires: this.expires?.build(),
       },
       isNil
-    );
+    ) as Record<string, string>;
   }
 }

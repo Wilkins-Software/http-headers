@@ -5,7 +5,7 @@ export type Directive = 'cache' | 'cookies' | 'storage' | 'executionContexts';
 export type DirectiveObject = Partial<Record<Directive, boolean>> | '*';
 
 export class ClearSiteData extends BaseHeader {
-  private _directives?: DirectiveObject;
+  protected _directives?: DirectiveObject;
 
   constructor(directive?: DirectiveObject) {
     super();
