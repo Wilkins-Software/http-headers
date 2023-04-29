@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./dist",
+    "outDir": "./dist",
+    "noEmit": true,
     "target": "ESNext",
     "types": ["vitest/globals"],
     "useDefineForClassFields": true,
@@ -11,11 +15,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "skipLibCheck": true
   },
-  "include": ["src"]
+  "include": ["lib"]
 }
