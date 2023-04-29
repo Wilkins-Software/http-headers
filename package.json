@@ -1,7 +1,7 @@
 {
   "name": "@wilkins-software/http-headers",
   "author": "Mark Wilkins",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "license": "MIT",
   "private": false,
   "main": "dist/index.js",
