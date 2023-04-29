@@ -2,22 +2,16 @@ name: CI
 on: [push]
 jobs:
   build:
-    name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
-
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node: ['16.0.0']
-        os: [ubuntu-latest, windows-latest, macOS-latest]
-
+    name: Build, lint, and test on Node 18
+    runs-on: "ubuntu-latest"
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: Use Node ${{ matrix.node }}
+      - name: Use Node latest
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node }}
+          node-version: latest
 
       - name: Install deps and build (with cache)
         run: npm i
