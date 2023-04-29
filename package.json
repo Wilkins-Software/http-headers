@@ -1,4 +1,6 @@
 {
+  "name": "@wilkins-software/http-headers",
+  "author": "Mark Wilkins",
   "version": "0.2.4",
   "license": "MIT",
   "private": false,
