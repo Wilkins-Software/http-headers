@@ -4,10 +4,10 @@
   "version": "0.3.0",
   "license": "MIT",
   "private": false,
-  "main": "dist/index.js",
-  "module": "./dist/index.js",
-  "typings": "dist/index.d.ts",
-  "types": "./index.d.ts",
+  "main": "dist/http-headers.js",
+  "module": "./dist/http-headers.mjs",
+  "typings": "dist/main.d.ts",
+  "types": "dist/main.d.ts",
   "files": [
     "dist"
   ],
