@@ -13,7 +13,12 @@ export type AuthenticationType =
   | "vapid";
 export class ProxyAuthenticate extends BaseHeader {
   protected _type?: AuthenticationType | undefined;
-  protected _realm?: string | undefined;
+  /** 
+    * @description A description of the protected area, the realm. If no realm is 
+    * specified, clients often display a formatted host name instead.
+    * protected _realm?: string | undefined;
+    */
+    protected _realm?: string | undefined;
 
   getType(): string | undefined {
     return this._type;
