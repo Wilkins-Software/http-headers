@@ -12,6 +12,7 @@ export class ContentType extends BaseHeader {
   public getContentType(): string {
     return this._ContentType;
   }
+
   public setMimeType(ContentType: string) {
     this._ContentType = ContentType;
     return this;
