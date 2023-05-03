@@ -11,7 +11,7 @@ export class Connection extends BaseHeader {
   public getConnection(): string {
     return this._connection;
   }
-  public setConnection(connection: string) {
+  public setConnection(connection: 'keep-alive' | 'close') {
     this._connection = connection;
     return this;
   }
