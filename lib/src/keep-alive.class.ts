@@ -1,9 +1,5 @@
 import { compact } from "lodash";
 import { BaseHeader } from "./base-header.class";
-
-/**
- * Class implementation of the response directives listed here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control
- */
 export class KeepAlive extends BaseHeader {
   protected _timeout?: number | undefined;
   protected _max?: number | undefined;

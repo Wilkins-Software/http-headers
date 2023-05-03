@@ -10,6 +10,17 @@ describe("getters and setters", () => {
   });
 });
 
+describe("object", () => {
+  it("should build a valid keep alive header object", () => {
+    const keepAlive = new KeepAlive({
+      timeout: 5,
+    });
+    expect(keepAlive.getHeadersObject()).toEqual({
+      "Keep-Alive": "timeout=5",
+    });
+  });
+});
+
 describe("build", () => {
   it("builds keep alive header", () => {
     const keepAlive = new KeepAlive({
@@ -17,7 +28,6 @@ describe("build", () => {
       max: 1000,
     });
 
-    console.log("result: ", keepAlive.build());
     expect(keepAlive.build()).toBe("timeout=5, max=1000");
   });
 });
