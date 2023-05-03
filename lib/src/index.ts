@@ -10,4 +10,5 @@ export * from "./keep-alive.class";
 export * from "./content-type.class";
 export * from "./expires.class";
 export * from "./http-headers.class";
+export * from "./te.class";
 export * from "./http-status-codes";
