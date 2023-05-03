@@ -1,11 +1,11 @@
 import { capitalize, filter, isNil } from "lodash";
+import { Headers as NodeHeaders } from "node-fetch";
 import { Age } from "./age.class";
 import { CacheControlHeader } from "./cache-control.class";
 import { ClearSiteData } from "./clear-site-data.class";
 import { Expires } from "./expires.class";
 import { HTTP_STATUS_CODE } from "./http-status-codes";
-
-export class HttpHeaders extends Headers {
+export class HttpHeaders extends NodeHeaders {
   protected cacheControl?: CacheControlHeader;
   protected age?: Age;
   protected clearSiteData?: ClearSiteData;
