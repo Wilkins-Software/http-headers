@@ -7,7 +7,7 @@ export class ProxyAuthenticate extends BaseHeader {
     return this._type;
   }
 
-  setType(value: string | undefined) {
+  setType(value: AuthenticationType | undefined) {
     this._type = value;
     return this;
   }
