@@ -22,7 +22,10 @@ export class ProxyAuthenticate extends BaseHeader {
   }
 
   build() {
-    return this._type + ` realm="${this._realm}"`;
+    return (
+      `${this._type !== undefined ? this._type : ""}` +
+      `${this._realm !== undefined ? ` realm="${this._realm}"` : ""}`
+    );
   }
 
   getHeadersObject() {

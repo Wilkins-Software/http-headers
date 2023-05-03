@@ -10,18 +10,37 @@ describe("getters and setters", () => {
   });
 });
 
-it("should build a valid proxy authenticate header object", () => {
-  const proxyAuthenticate = new ProxyAuthenticate({
-    type: "Basic",
-    realm: "Access to the internal site",
+describe("header object", () => {
+  it("should build a valid proxy authenticate header object without realm property", () => {
+    const proxyAuthenticate = new ProxyAuthenticate({
+      type: "Basic",
+    });
+    expect(proxyAuthenticate.getHeadersObject()).toEqual({
+      "Proxy-Authenticate": `Basic`,
+    });
   });
-  expect(proxyAuthenticate.getHeadersObject()).toEqual({
-    "Proxy-Authenticate": `Basic realm="Access to the internal site"`,
+
+  it("should build a valid proxy authenticate header object", () => {
+    const proxyAuthenticate = new ProxyAuthenticate({
+      type: "Basic",
+      realm: "Access to the internal site",
+    });
+    expect(proxyAuthenticate.getHeadersObject()).toEqual({
+      "Proxy-Authenticate": `Basic realm="Access to the internal site"`,
+    });
   });
 });
 
 describe("build", () => {
-  it("builds authenticate header header", () => {
+  it("builds proxy authenticate header without realm property", () => {
+    const proxyAuthenticate = new ProxyAuthenticate({
+      type: "Basic",
+    });
+
+    expect(proxyAuthenticate.build()).toBe("Basic");
+  });
+
+  it("builds proxy authenticate header", () => {
     const proxyAuthenticate = new ProxyAuthenticate({
       type: "Basic",
       realm: "Access to the internal site",
