@@ -1,6 +1,18 @@
 import { BaseHeader } from "./base-header.class";
+
+export type AuthenticationType =
+  | "Basic"
+  | "Bearer"
+  | "Digest"
+  | "DPoP"
+  | "Mutual"
+  | "Negotiate"
+  | "OAuth"
+  | "SCRAM-SHA-1"
+  | "SCRAM-SHA-256"
+  | "vapid";
 export class ProxyAuthenticate extends BaseHeader {
-  protected _type?: string | undefined;
+  protected _type?: AuthenticationType | undefined;
   protected _realm?: string | undefined;
 
   getType(): string | undefined {
