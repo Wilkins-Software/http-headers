@@ -7,6 +7,7 @@ export * from "./base-header.class";
 export * from "./cache-control.class";
 export * from "./clear-site-data.class";
 export * from "./keep-alive.class";
+export * from "./content-type.class";
 export * from "./expires.class";
 export * from "./http-headers.class";
 export * from "./http-status-codes";
