@@ -1,5 +1,6 @@
 import { BaseHeader } from "./base-header.class";
 
+/** @deprecated see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-CH-Lifetime */
 export class AcceptCHLifetime extends BaseHeader {
   protected _acceptCHLifetime: number;
 
