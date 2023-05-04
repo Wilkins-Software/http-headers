@@ -15,6 +15,7 @@ export * from "./http-headers.class";
 export * from "./trailer.class";
 export * from "./transfer-encoding.class";
 export * from "./te.class";
+export * from "./accept-patch.class";
 export * from "./accept-post.class";
 export * from "./accept-ranges.class";
 export * from "./access-control-allow-credentials.class";
