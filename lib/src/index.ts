@@ -15,5 +15,6 @@ export * from "./http-headers.class";
 export * from "./trailer.class";
 export * from "./transfer-encoding.class";
 export * from "./te.class";
+export * from "./access-control-allow-methods.class";
 export * from "./access-control-allow-origin.class";
 export * from "./http-status-codes";
