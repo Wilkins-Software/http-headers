@@ -28,4 +28,5 @@ export * from "./accept-ranges.class";
 export * from "./access-control-allow-credentials.class";
 export * from "./access-control-allow-methods.class";
 export * from "./access-control-allow-origin.class";
+export * from "./access-control-max-age.class";
 export * from "./http-status-codes";
