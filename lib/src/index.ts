@@ -15,6 +15,7 @@ export * from "./http-headers.class";
 export * from "./trailer.class";
 export * from "./transfer-encoding.class";
 export * from "./te.class";
+export * from "./accept-ch-lifetime.class";
 export * from "./accept-encoding.class";
 export * from "./accept-language.class";
 export * from "./accept-patch.class";
