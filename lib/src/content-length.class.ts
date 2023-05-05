@@ -1,7 +1,7 @@
 import { BaseHeader } from "./base-header.class";
 
 export class ContentLength extends BaseHeader {
-  protected _contentLength: number = 0;
+  protected _contentLength?: number;
 
   constructor(contentLength: number) {
     super();
@@ -15,11 +15,11 @@ export class ContentLength extends BaseHeader {
   }
 
   build(): string {
-    return this._contentLength.toString();
+    return this._contentLength ? this._contentLength.toString() : "null";
   }
 
-  setLength(newContentLengthRes: number) {
-    this._contentLength = newContentLengthRes;
+  setLength(newContentLength: number) {
+    this._contentLength = newContentLength;
     return this;
   }
 }
