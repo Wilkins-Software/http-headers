@@ -29,6 +29,7 @@ export * from "./access-control-allow-credentials.class";
 export * from "./access-control-allow-methods.class";
 export * from "./access-control-allow-origin.class";
 export * from "./access-control-max-age.class";
+export * from "./alt-svc.class";
 export * from "./content-disposition.class";
 export * from "./content-encoding.class";
 export * from "./content-language.class";
