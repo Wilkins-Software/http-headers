@@ -6,7 +6,7 @@ export class EarlyData extends BaseHeader {
   }
   getHeadersObject(): Record<string, string> {
     return {
-      EarlyData: "1",
+      "Early-Data": "1",
     };
   }
 
