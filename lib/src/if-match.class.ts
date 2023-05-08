@@ -5,7 +5,7 @@ export class IfMatch extends BaseHeader {
 
   constructor(...ifMatchRes: string[]) {
     super();
-    this._ifMatch = ifMatchRes.map((item) => `"${item}"`).join(", ");
+    this._ifMatch = ifMatchRes.join(", ");
   }
 
   getHeadersObject(): Record<string, string> {
@@ -20,7 +20,7 @@ export class IfMatch extends BaseHeader {
   }
 
   setIfMatch(...newIfMatchRes: string[]) {
-    this._ifMatch = newIfMatchRes.map((item) => `"${item}"`).join(", ");
+    this._ifMatch = newIfMatchRes.join(", ");
     return this;
   }
 }
