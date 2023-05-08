@@ -2,7 +2,7 @@ import { Forwarded } from "../src/forwarded.class";
 
 describe("Forwarded", () => {
   it("builds a Forwarded header", () => {
-    const cookie = new Forwarded(
+    const forwarded = new Forwarded(
       {
         key: "for",
         value: "192.0.2.60",
@@ -17,8 +17,8 @@ describe("Forwarded", () => {
         value: "203.0.113.43",
       }
     );
-    expect(cookie.build()).toBe("for=192.0.2.60;proto=http;by=203.0.113.43");
-    cookie.setForwarded(
+    expect(forwarded.build()).toBe("for=192.0.2.60;proto=http;by=203.0.113.43");
+    forwarded.setForwarded(
       {
         key: "for",
         value: "192.0.2.43",
@@ -28,7 +28,7 @@ describe("Forwarded", () => {
         value: "198.51.100.17",
       }
     );
-    expect(cookie.getHeadersObject()).toEqual({
+    expect(forwarded.getHeadersObject()).toEqual({
       Forwarded: "for=192.0.2.43, for=198.51.100.17",
     });
   });
