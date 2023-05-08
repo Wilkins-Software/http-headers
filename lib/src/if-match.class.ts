@@ -20,7 +20,7 @@ export class IfMatch extends BaseHeader {
   }
 
   setIfMatch(...newIfMatchRes: string[]) {
-    this._ifMatch = newIfMatchRes.join(", ");
+    this._ifMatch = newIfMatchRes.map((item) => `"${item}"`).join(", ");
     return this;
   }
 }
