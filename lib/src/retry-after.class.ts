@@ -1,18 +1,18 @@
 import { BaseHeader } from "./base-header.class";
 
 export class RetryAfter extends BaseHeader {
-  protected _policy: string;
+  protected _retryAfter: string;
 
-  constructor(policy: number | string) {
+  constructor(retryAfter: number | string) {
     super();
-    this._policy = policy.toString();
+    this._retryAfter = retryAfter.toString();
   }
 
   public getRetryAfter(): string {
-    return this._policy;
+    return this._retryAfter;
   }
-  public setRetryAfter(policy: number | string) {
-    this._policy = policy.toString();
+  public setRetryAfter(retryAfter: number | string) {
+    this._retryAfter = retryAfter.toString();
     return this;
   }
 
