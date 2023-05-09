@@ -43,4 +43,5 @@ export * from "./content-range.class";
 export * from "./content-security-policy.class";
 export * from "./cookie.class";
 export * from "./early-data.class";
+export * from "./sec-ch-ua-platform.class";
 export * from "./http-status-codes";
