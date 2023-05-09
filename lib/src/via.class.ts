@@ -42,7 +42,7 @@ export class Via extends BaseHeader {
             via.pseudonym ? " " + via.pseudonym : ""
           }${via.host ? " " + via.host : ""}${via.port ? ":" + via.port : ""}`
       )
-      .join("; ");
+      .join(", ");
     return this;
   }
 }
