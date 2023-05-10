@@ -42,6 +42,7 @@ export * from "./content-range.class";
 export * from "./content-security-policy.class";
 export * from "./cookie.class";
 export * from "./early-data.class";
+export * from "./if-unmodified-since.class";
 export * from "./last-modified.class";
 export * from "./location.class";
 export * from "./max-forwards.class";
