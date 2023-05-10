@@ -44,4 +44,7 @@ export * from "./content-security-policy.class";
 export * from "./cookie.class";
 export * from "./early-data.class";
 export * from "./vary.class";
-export * from "./http-status-codes";
+export * from "./via.class";
+export * from "./want-digest.class";
+export * from "./x-content-type-options.class";
+export * from "./x-frame-options.class";
