@@ -42,6 +42,7 @@ export * from "./content-range.class";
 export * from "./content-security-policy.class";
 export * from "./cookie.class";
 export * from "./early-data.class";
+export * from "./permissions-policy.class";
 export * from "./range.class";
 export * from "./referer.class";
 export * from "./referrer-policy.class";
