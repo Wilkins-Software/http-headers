@@ -42,6 +42,7 @@ export * from "./content-range.class";
 export * from "./content-security-policy.class";
 export * from "./cookie.class";
 export * from "./early-data.class";
+export * from "./etag.class";
 export * from "./expect.class";
 export * from "./forwarded.class";
 export * from "./from.class";
