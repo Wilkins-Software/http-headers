@@ -43,5 +43,6 @@ export * from "./content-range.class";
 export * from "./content-security-policy.class";
 export * from "./cookie.class";
 export * from "./early-data.class";
+export * from "./x-content-type-options.class";
 export * from "./x-frame-options.class";
 export * from "./http-status-codes";
