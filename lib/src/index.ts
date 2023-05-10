@@ -42,6 +42,7 @@ export * from "./content-range.class";
 export * from "./content-security-policy.class";
 export * from "./cookie.class";
 export * from "./early-data.class";
+export * from "./timing-allow-origin.class";
 export * from "./upgrade.class";
 export * from "./upgrade-insecure-requests.class";
 export * from "./http-status-codes";
