@@ -43,6 +43,7 @@ export * from "./content-range.class";
 export * from "./content-security-policy.class";
 export * from "./cookie.class";
 export * from "./early-data.class";
+export * from "./vary.class";
 export * from "./via.class";
 export * from "./want-digest.class";
 export * from "./x-content-type-options.class";
