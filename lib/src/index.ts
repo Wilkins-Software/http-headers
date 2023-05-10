@@ -41,6 +41,7 @@ export * from "./content-location.class";
 export * from "./content-range.class";
 export * from "./content-security-policy.class";
 export * from "./cookie.class";
+export * from "./critical-ch.class";
 export * from "./cross-origin-embedder-policy.class";
 export * from "./cross-origin-opener-policy.class";
 export * from "./cross-origin-resource-policy.class";
