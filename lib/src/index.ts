@@ -41,6 +41,7 @@ export * from "./content-location.class";
 export * from "./content-range.class";
 export * from "./content-security-policy.class";
 export * from "./cookie.class";
+export * from "./date.class";
 export * from "./device-memory.class";
 export * from "./digest.class";
 export * from "./downlink.class";
