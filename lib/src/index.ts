@@ -42,6 +42,7 @@ export * from "./content-range.class";
 export * from "./content-security-policy.class";
 export * from "./cookie.class";
 export * from "./early-data.class";
+export * from "./sec-websocket-accept.class";
 export * from "./server.class";
 export * from "./server-timing.class";
 export * from "./service-worker-navigation-preload.class";
