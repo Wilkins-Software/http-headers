@@ -42,6 +42,7 @@ export * from "./content-range.class";
 export * from "./content-security-policy.class";
 export * from "./cookie.class";
 export * from "./early-data.class";
+export * from "./sec-ch-ua.class";
 export * from "./sec-ch-ua-arch.class";
 export * from "./sec-ch-ua-full-version-list.class";
 export * from "./link.class";
