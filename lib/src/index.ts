@@ -42,6 +42,7 @@ export * from "./content-range.class";
 export * from "./content-security-policy.class";
 export * from "./cookie.class";
 export * from "./early-data.class";
+export * from "./rtt.class";
 export * from "./save-data.class";
 export * from "./sec-ch-prefers-reduced-motion.class";
 export * from "./sec-ch-ua.class";
