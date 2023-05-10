@@ -42,6 +42,7 @@ export * from "./content-range.class";
 export * from "./content-security-policy.class";
 export * from "./cookie.class";
 export * from "./early-data.class";
+export * from "./service-worker-navigation-preload.class";
 export * from "./sourcemap.class";
 export * from "./strict-transport-security.class";
 export * from "./timing-allow-origin.class";
