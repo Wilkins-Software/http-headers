@@ -4,6 +4,7 @@ import { CacheControlHeader } from "./header-classes/cache-control.class";
 import { ClearSiteData } from "./header-classes/clear-site-data.class";
 import { Expires } from "./header-classes/expires.class";
 import { HTTP_STATUS_CODE } from "./http-status-codes";
+import { ServerTiming } from "./header-classes";
 
 export class HttpHeaders extends Headers {
   protected cacheControl?: CacheControlHeader;
@@ -18,6 +19,7 @@ export class HttpHeaders extends Headers {
       Age: (builder: Age) => Age;
       "Clear-Site-Data": (builder: ClearSiteData) => ClearSiteData;
       Expires: (builder: Expires) => Expires;
+      "Server-Timing": (builder: ServerTiming) => ServerTiming;
     }>
   ) {
     const headersInit = filter(
