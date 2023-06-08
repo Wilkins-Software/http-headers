@@ -1,8 +1,8 @@
 import { capitalize, filter, isNil } from "lodash";
-import { Age } from "./age.class";
-import { CacheControlHeader } from "./cache-control.class";
-import { ClearSiteData } from "./clear-site-data.class";
-import { Expires } from "./expires.class";
+import { Age } from "./header-classes/age.class";
+import { CacheControlHeader } from "./header-classes/cache-control.class";
+import { ClearSiteData } from "./header-classes/clear-site-data.class";
+import { Expires } from "./header-classes/expires.class";
 import { HTTP_STATUS_CODE } from "./http-status-codes";
 
 export class HttpHeaders extends Headers {

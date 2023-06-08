@@ -1,4 +1,4 @@
-import { AcceptCH } from "../src/accept-ch-class";
+import { AcceptCH } from "../src/header-classes/accept-ch-class";
 
 describe("AcceptCH", () => {
   it("builds a AcceptCH header", () => {
