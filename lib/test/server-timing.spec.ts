@@ -1,4 +1,3 @@
-import { minutes } from "@wilkins-software/time-conversion-helpers";
 import { ServerTiming } from "../src/header-classes/server-timing.class";
 
 describe("ServerTiming", () => {
