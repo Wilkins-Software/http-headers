@@ -34,6 +34,10 @@ export class HttpHeaders extends Headers {
           headers?.["Clear-Site-Data"]?.(new ClearSiteData({})).build(),
         ],
         ["Expires", headers?.["Expires"]?.(new Expires(new Date())).build()],
+        [
+          "Server-Timing",
+          headers?.["Server-Timing"]?.(new ServerTiming([])).build(),
+        ],
       ],
       ([, value]: [any, any]) => !isNil(value)
     ) as [string, string][];
