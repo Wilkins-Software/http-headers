@@ -1,4 +1,4 @@
-import { IfNoneMatch } from "../src/if-none-match.class";
+import { IfNoneMatch } from "../src/header-classes/if-none-match.class";
 
 describe("IfNoneMatch", () => {
   it("builds a IfNoneMatch header", () => {

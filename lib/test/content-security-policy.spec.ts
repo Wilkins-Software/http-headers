@@ -1,4 +1,4 @@
-import { ContentSecurityPolicy } from "../src/content-security-policy.class";
+import { ContentSecurityPolicy } from "../src/header-classes/content-security-policy.class";
 
 describe("ContentSecurity", () => {
   it("builds a ContentSecurity header", () => {

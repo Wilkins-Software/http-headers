@@ -1,4 +1,4 @@
-import { Authorization } from "../src/authorization.class";
+import { Authorization } from "../src/header-classes/authorization.class";
 
 describe("Authorization", () => {
   it("builds a Authorization header in basic case", () => {

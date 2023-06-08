@@ -1,4 +1,4 @@
-import { WantDigest } from "../src/want-digest.class";
+import { WantDigest } from "../src/header-classes/want-digest.class";
 
 describe("WantDigest", () => {
   it("builds a WantDigest header", () => {

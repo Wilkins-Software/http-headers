@@ -1,4 +1,4 @@
-import { From } from "../src/from.class";
+import { From } from "../src/header-classes/from.class";
 
 describe("From", () => {
   it("builds a From header", () => {

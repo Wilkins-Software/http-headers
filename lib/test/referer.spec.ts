@@ -1,4 +1,4 @@
-import { Referer } from "../src/referer.class";
+import { Referer } from "../src/header-classes/referer.class";
 
 describe("Referer", () => {
   it("should build a valid Referer header", () => {

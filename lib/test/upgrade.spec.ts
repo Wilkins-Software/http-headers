@@ -1,4 +1,4 @@
-import { Upgrade } from "../src/upgrade.class";
+import { Upgrade } from "../src/header-classes/upgrade.class";
 
 describe("Upgrade", () => {
   it("builds a Upgrade header", () => {

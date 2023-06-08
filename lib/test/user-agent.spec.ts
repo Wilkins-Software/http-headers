@@ -1,4 +1,4 @@
-import { UserAgent } from "../src/user-agent.class";
+import { UserAgent } from "../src/header-classes/user-agent.class";
 
 describe("UserAgent", () => {
   it("builds a UserAgent header", () => {

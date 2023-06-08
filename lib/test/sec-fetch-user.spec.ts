@@ -1,4 +1,4 @@
-import { SecFetchUser } from "../src/sec-fetch-user.class";
+import { SecFetchUser } from "../src/header-classes/sec-fetch-user.class";
 
 describe("SecFetchUser", () => {
   it("builds a SecFetchUser header", () => {

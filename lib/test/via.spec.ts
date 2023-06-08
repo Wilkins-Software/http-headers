@@ -1,4 +1,4 @@
-import { Via } from "../src/via.class";
+import { Via } from "../src/header-classes/via.class";
 
 describe("Via", () => {
   it("builds a Via header", () => {

@@ -1,4 +1,4 @@
-import { AcceptRanges } from "../src/accept-ranges.class";
+import { AcceptRanges } from "../src/header-classes/accept-ranges.class";
 
 describe("AcceptRanges", () => {
   it("should build a valid AcceptRanges header", () => {

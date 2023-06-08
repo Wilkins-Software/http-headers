@@ -1,4 +1,4 @@
-import { ContentType } from "../src/content-type.class";
+import { ContentType } from "../src/header-classes/content-type.class";
 
 describe("ContentType", () => {
   it("should build a valid ContentType header", () => {

@@ -1,4 +1,4 @@
-import { Allow } from "../src/allow.class";
+import { Allow } from "../src/header-classes/allow.class";
 
 describe("Allow", () => {
   it("builds a Allow header", () => {

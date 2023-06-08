@@ -1,4 +1,4 @@
-import { CrossOriginEmbedderPolicy } from "../src/cross-origin-embedder-policy.class";
+import { CrossOriginEmbedderPolicy } from "../src/header-classes/cross-origin-embedder-policy.class";
 
 describe("CrossOriginEmbedderPolicy", () => {
   it("should build a valid CrossOriginEmbedderPolicy header", () => {

@@ -1,4 +1,4 @@
-import { SecChUaBitness } from "../src/sec-ch-ua-bitness.class";
+import { SecChUaBitness } from "../src/header-classes/sec-ch-ua-bitness.class";
 
 describe("SecChUaBitness", () => {
   it("should build a valid SecChUaBitness header", () => {

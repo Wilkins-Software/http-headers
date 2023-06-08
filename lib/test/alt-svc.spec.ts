@@ -1,4 +1,4 @@
-import { AltSvc } from "../src/alt-svc.class";
+import { AltSvc } from "../src/header-classes/alt-svc.class";
 
 describe("AltSvc", () => {
   it("builds a AltSvc header", () => {

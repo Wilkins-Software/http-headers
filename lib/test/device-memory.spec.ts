@@ -1,4 +1,4 @@
-import { DeviceMemory } from "../src/device-memory.class";
+import { DeviceMemory } from "../src/header-classes/device-memory.class";
 
 describe("DeviceMemory", () => {
   it("should build a valid DeviceMemory header", () => {

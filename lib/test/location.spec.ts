@@ -1,4 +1,4 @@
-import { Location } from "../src/location.class";
+import { Location } from "../src/header-classes/location.class";
 
 describe("Location", () => {
   it("should build a valid Location header", () => {

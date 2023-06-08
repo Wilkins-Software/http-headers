@@ -1,4 +1,4 @@
-import { IfMatch } from "../src/if-match.class";
+import { IfMatch } from "../src/header-classes/if-match.class";
 
 describe("IfMatch", () => {
   it("builds a IfMatch header", () => {

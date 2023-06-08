@@ -1,4 +1,4 @@
-import { AcceptPost } from "../src/accept-post.class";
+import { AcceptPost } from "../src/header-classes/accept-post.class";
 
 describe("AcceptPost", () => {
   it("should build a valid AcceptPost header", () => {

@@ -1,4 +1,4 @@
-import { SecChPrefersReducedMotion } from "../src/sec-ch-prefers-reduced-motion.class";
+import { SecChPrefersReducedMotion } from "../src/header-classes/sec-ch-prefers-reduced-motion.class";
 
 describe("SecChPrefersReducedMotion", () => {
   it("should build a valid SecChPrefersReducedMotion header", () => {

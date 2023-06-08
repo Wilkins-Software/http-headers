@@ -1,4 +1,4 @@
-import { ServiceWorkerNavigationPreload } from "../src/service-worker-navigation-preload.class";
+import { ServiceWorkerNavigationPreload } from "../src/header-classes/service-worker-navigation-preload.class";
 
 describe("ServiceWorkerNavigationPreload", () => {
   it("should build a valid ServiceWorkerNavigationPreload header", () => {

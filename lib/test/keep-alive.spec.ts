@@ -1,4 +1,4 @@
-import { KeepAlive } from "../src/keep-alive.class";
+import { KeepAlive } from "../src/header-classes/keep-alive.class";
 
 describe("getters and setters", () => {
   it("Sets private to the opposite of public", () => {

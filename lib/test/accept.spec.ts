@@ -1,4 +1,4 @@
-import { Accept } from "../src/accept.class";
+import { Accept } from "../src/header-classes/accept.class";
 
 describe("Accept", () => {
   it("should build a valid Accept header", () => {

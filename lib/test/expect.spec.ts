@@ -1,4 +1,4 @@
-import { Expect } from "../src/expect.class";
+import { Expect } from "../src/header-classes/expect.class";
 
 describe("EarlyData", () => {
   it("should build a valid EarlyData header", () => {

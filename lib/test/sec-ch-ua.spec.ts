@@ -1,4 +1,4 @@
-import { SecChUa } from "../src/sec-ch-ua.class";
+import { SecChUa } from "../src/header-classes/sec-ch-ua.class";
 
 describe("SecChUa", () => {
   it("should build a valid SecChUa header", () => {

@@ -1,4 +1,4 @@
-import { CrossOriginOpenerPolicy } from "../src/cross-origin-opener-policy.class";
+import { CrossOriginOpenerPolicy } from "../src/header-classes/cross-origin-opener-policy.class";
 
 describe("CrossOriginOpenerPolicy", () => {
   it("should build a valid CrossOriginOpenerPolicy header", () => {

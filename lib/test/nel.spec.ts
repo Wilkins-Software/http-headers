@@ -1,4 +1,4 @@
-import { NEL } from "../src/nel.class";
+import { NEL } from "../src/header-classes/nel.class";
 
 describe("NEL", () => {
   it("should build a valid NEL header", () => {

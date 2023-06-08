@@ -1,4 +1,4 @@
-import { XContentTypeOptions } from "../src/x-content-type-options.class";
+import { XContentTypeOptions } from "../src/header-classes/x-content-type-options.class";
 
 describe("XContentTypeOptions", () => {
   it("builds a XContentTypeOptions header", () => {

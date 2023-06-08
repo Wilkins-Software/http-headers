@@ -1,4 +1,4 @@
-import { IfUnmodifiedSince } from "../src/if-unmodified-since.class";
+import { IfUnmodifiedSince } from "../src/header-classes/if-unmodified-since.class";
 
 describe("IfUnmodifiedSince", () => {
   it("should build a valid IfUnmodifiedSince header", () => {

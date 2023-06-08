@@ -25,7 +25,7 @@
     "lint": "eslint --ext .ts,.js lib",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "generate-barrels": "npx barrelsby --delete --directory src -l all"
+    "generate-barrels": "npx barrelsby --delete --directory lib -l all"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^8.2.4",

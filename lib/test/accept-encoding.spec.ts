@@ -1,4 +1,4 @@
-import { AcceptEncoding } from "../src/accept-encoding.class";
+import { AcceptEncoding } from "../src/header-classes/accept-encoding.class";
 
 describe("AcceptEncoding", () => {
   it("builds a AcceptEncoding header", () => {

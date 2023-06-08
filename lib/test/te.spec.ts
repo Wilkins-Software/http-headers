@@ -1,4 +1,4 @@
-import { Te } from "../src/te.class";
+import { Te } from "../src/header-classes/te.class";
 
 describe("Te", () => {
   it("builds a TE header", () => {

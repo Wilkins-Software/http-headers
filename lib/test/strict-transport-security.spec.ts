@@ -1,4 +1,4 @@
-import { StrictTrnsportSecurity } from "../src/strict-transport-security.class";
+import { StrictTrnsportSecurity } from "../src/header-classes/strict-transport-security.class";
 
 describe("StrictTrnsportSecurity", () => {
   it("builds a StrictTrnsportSecurity header", () => {

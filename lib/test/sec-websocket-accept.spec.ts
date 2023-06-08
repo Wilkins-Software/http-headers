@@ -1,4 +1,4 @@
-import { SecWebsocketAccept } from "../src/sec-websocket-accept.class";
+import { SecWebsocketAccept } from "../src/header-classes/sec-websocket-accept.class";
 
 describe("SecWebsocketAccept", () => {
   it("should build a valid SecWebsocketAccept header", () => {

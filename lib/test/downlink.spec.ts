@@ -1,4 +1,4 @@
-import { Downlink } from "../src/downlink.class";
+import { Downlink } from "../src/header-classes/downlink.class";
 
 describe("Downlink", () => {
   it("should build a valid Downlink header", () => {

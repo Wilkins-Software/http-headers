@@ -1,4 +1,4 @@
-import { LastModified } from "../src/last-modified.class";
+import { LastModified } from "../src/header-classes/last-modified.class";
 
 describe("LastModified", () => {
   it("should build a valid LastModified header", () => {

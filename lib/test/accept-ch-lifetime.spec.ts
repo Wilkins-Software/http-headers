@@ -1,4 +1,4 @@
-import { AcceptCHLifetime } from "../src/accept-ch-lifetime.class";
+import { AcceptCHLifetime } from "../src/header-classes/accept-ch-lifetime.class";
 
 describe("AcceptCHLifetime", () => {
   it("should build a valid AcceptCHLifetime header", () => {

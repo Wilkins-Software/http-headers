@@ -1,4 +1,4 @@
-import { ProxyAuthorization } from "../src/proxy-authorization.class";
+import { ProxyAuthorization } from "../src/header-classes/proxy-authorization.class";
 
 describe("getters and setters", () => {
   it("Sets private to the opposite of public", () => {

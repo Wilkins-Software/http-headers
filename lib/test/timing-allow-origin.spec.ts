@@ -1,4 +1,4 @@
-import { TimingAllowOrigin } from "../src/timing-allow-origin.class";
+import { TimingAllowOrigin } from "../src/header-classes/timing-allow-origin.class";
 
 describe("TimingAllowOrigin", () => {
   it("should build a valid TimingAllowOrigin header", () => {

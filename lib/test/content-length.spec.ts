@@ -1,4 +1,4 @@
-import { ContentLength } from "../src/content-length.class";
+import { ContentLength } from "../src/header-classes/content-length.class";
 
 describe("ContentLength", () => {
   it("builds a ContentLength header", () => {

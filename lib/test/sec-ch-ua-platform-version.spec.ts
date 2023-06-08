@@ -1,4 +1,4 @@
-import { SecChUaPlatformVersion } from "../src/sec-ch-ua-platform-version.class";
+import { SecChUaPlatformVersion } from "../src/header-classes/sec-ch-ua-platform-version.class";
 
 describe("SecChUaPlatformVersion", () => {
   it("builds a SecChUaPlatformVersion header", () => {

@@ -1,4 +1,4 @@
-import { Cookie } from "../src/cookie.class";
+import { Cookie } from "../src/header-classes/cookie.class";
 
 describe("Cookie", () => {
   it("builds a Cookie header", () => {

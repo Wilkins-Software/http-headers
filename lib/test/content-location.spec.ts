@@ -1,4 +1,4 @@
-import { ContentLocation } from "../src/content-location.class";
+import { ContentLocation } from "../src/header-classes/content-location.class";
 
 describe("ContentLocation", () => {
   it("builds a ContentLocation header", () => {

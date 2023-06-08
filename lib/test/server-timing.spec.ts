@@ -1,5 +1,5 @@
 import { minutes } from "@wilkins-software/time-conversion-helpers";
-import { ServerTiming } from "../src/server-timing.class";
+import { ServerTiming } from "../src/header-classes/server-timing.class";
 
 describe("ServerTiming", () => {
   it("should build a valid ServerTiming header", () => {

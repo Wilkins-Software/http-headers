@@ -1,4 +1,4 @@
-import { SecFetchMode } from "../src/sec-fetch-mode.class";
+import { SecFetchMode } from "../src/header-classes/sec-fetch-mode.class";
 
 describe("SecFetchMode", () => {
   it("builds a SecFetchMode header", () => {

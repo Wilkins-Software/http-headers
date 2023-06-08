@@ -1,4 +1,4 @@
-import { Digest } from "../src/digest.class";
+import { Digest } from "../src/header-classes/digest.class";
 
 describe("Digest", () => {
   it("builds a Digest header", () => {

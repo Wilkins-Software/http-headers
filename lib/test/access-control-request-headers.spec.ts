@@ -1,4 +1,4 @@
-import { AccessControlRequestHeaders } from "../src/access-control-request-headers.class";
+import { AccessControlRequestHeaders } from "../src/header-classes/access-control-request-headers.class";
 
 describe("AccessControlRequestHeaders", () => {
   it("builds a AccessControlRequestHeaders header", () => {

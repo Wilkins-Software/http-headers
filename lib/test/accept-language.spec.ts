@@ -1,4 +1,4 @@
-import { AcceptLanguage } from "../src/accept-language.class";
+import { AcceptLanguage } from "../src/header-classes/accept-language.class";
 
 describe("AcceptLanguage", () => {
   it("builds a AcceptLanguage header", () => {

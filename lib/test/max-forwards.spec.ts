@@ -1,4 +1,4 @@
-import { MaxForwards } from "../src/max-forwards.class";
+import { MaxForwards } from "../src/header-classes/max-forwards.class";
 
 describe("MaxForwards", () => {
   it("should build a valid MaxForwards header", () => {

@@ -1,4 +1,4 @@
-import { ECT } from "../src/ect.class";
+import { ECT } from "../src/header-classes/ect.class";
 
 describe("ECT", () => {
   it("should build a valid ECT header", () => {

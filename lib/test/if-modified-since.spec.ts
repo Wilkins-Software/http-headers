@@ -1,4 +1,4 @@
-import { IfModifiedSince } from "../src/if-modified-since.class";
+import { IfModifiedSince } from "../src/header-classes/if-modified-since.class";
 
 describe("IfModifiedSince", () => {
   it("should build a valid IfModifiedSince header", () => {

@@ -1,4 +1,4 @@
-import { SecChUaFullVersionList } from "../src/sec-ch-ua-full-version-list.class";
+import { SecChUaFullVersionList } from "../src/header-classes/sec-ch-ua-full-version-list.class";
 
 describe("SecChUaFullVersionList", () => {
   it("should build a valid SecChUaFullVersionList header", () => {

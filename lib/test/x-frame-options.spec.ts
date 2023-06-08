@@ -1,4 +1,4 @@
-import { XFrameOptions } from "../src/x-frame-options.class";
+import { XFrameOptions } from "../src/header-classes/x-frame-options.class";
 
 describe("XFrameOptions", () => {
   it("builds a XFrameOptions header", () => {

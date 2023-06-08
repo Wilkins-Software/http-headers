@@ -1,4 +1,4 @@
-import { PermissionsPolicy } from "../src/permissions-policy.class";
+import { PermissionsPolicy } from "../src/header-classes/permissions-policy.class";
 
 describe("PermissionPolicy", () => {
   it("builds a PermissionPolicy header", () => {

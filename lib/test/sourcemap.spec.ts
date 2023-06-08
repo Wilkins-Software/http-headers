@@ -1,4 +1,4 @@
-import { SourceMap } from "../src/sourcemap.class";
+import { SourceMap } from "../src/header-classes/sourcemap.class";
 
 describe("SourceMap", () => {
   it("should build a valid SourceMap header", () => {

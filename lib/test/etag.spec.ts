@@ -1,4 +1,4 @@
-import { ETag } from "../src/etag.class";
+import { ETag } from "../src/header-classes/etag.class";
 
 describe("ETag", () => {
   it("should build a valid ETag header", () => {

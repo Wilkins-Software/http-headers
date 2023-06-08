@@ -1,4 +1,4 @@
-import { ProxyAuthenticate } from "../src/proxy-authenticate.class";
+import { ProxyAuthenticate } from "../src/header-classes/proxy-authenticate.class";
 
 describe("getters and setters", () => {
   it("Sets private to the opposite of public", () => {

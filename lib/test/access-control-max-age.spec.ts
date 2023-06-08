@@ -1,4 +1,4 @@
-import { AccessControlMaxAge } from "../src/access-control-max-age.class";
+import { AccessControlMaxAge } from "../src/header-classes/access-control-max-age.class";
 
 describe("AccessControlMaxAge", () => {
   it("should build a valid AccessControlMaxAge header", () => {

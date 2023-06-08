@@ -1,4 +1,4 @@
-import { ContentDisposition } from "../src/content-disposition.class";
+import { ContentDisposition } from "../src/header-classes/content-disposition.class";
 
 describe("ContentDisposition", () => {
   it("builds a ContentDisposition header", () => {

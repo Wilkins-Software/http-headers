@@ -1,4 +1,4 @@
-import { IfRange } from "../src/if-range.class";
+import { IfRange } from "../src/header-classes/if-range.class";
 
 describe("IfRange", () => {
   it("should build a valid IfRange header", () => {

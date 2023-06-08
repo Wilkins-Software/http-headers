@@ -1,4 +1,4 @@
-import { Range } from "../src/range.class";
+import { Range } from "../src/header-classes/range.class";
 
 describe("Range", () => {
   it("builds a Range header", () => {

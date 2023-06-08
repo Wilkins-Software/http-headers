@@ -1,4 +1,4 @@
-import { ReferrerPolicy } from "../src/referrer-policy.class";
+import { ReferrerPolicy } from "../src/header-classes/referrer-policy.class";
 
 describe("ReferrerPolicy", () => {
   it("should build a valid ReferrerPolicy header", () => {

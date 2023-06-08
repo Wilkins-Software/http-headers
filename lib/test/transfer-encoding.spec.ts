@@ -1,4 +1,4 @@
-import { TransferEncoding } from "../src/transfer-encoding.class";
+import { TransferEncoding } from "../src/header-classes/transfer-encoding.class";
 
 describe("TransferEncoding", () => {
   it("builds a Transfer Encoding header", () => {

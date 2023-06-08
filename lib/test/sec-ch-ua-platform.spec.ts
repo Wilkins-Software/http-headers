@@ -1,4 +1,4 @@
-import { SecChUaPlatform } from "../src/sec-ch-ua-platform.class";
+import { SecChUaPlatform } from "../src/header-classes/sec-ch-ua-platform.class";
 
 describe("SecChUaPlatform", () => {
   it("should build a valid SecChUaPlatform header", () => {

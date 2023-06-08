@@ -1,4 +1,4 @@
-import { Origin } from "../src/origin.class";
+import { Origin } from "../src/header-classes/origin.class";
 
 describe("Origin", () => {
   it("builds a Origin header", () => {

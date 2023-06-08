@@ -1,4 +1,4 @@
-import { RTT } from "../src/rtt.class";
+import { RTT } from "../src/header-classes/rtt.class";
 
 describe("RTT", () => {
   it("should build a valid RTT header", () => {

@@ -1,4 +1,4 @@
-import { Connection } from "../src/connection.class";
+import { Connection } from "../src/header-classes/connection.class";
 
 describe("Connection", () => {
   it("should build a valid Connection header", () => {

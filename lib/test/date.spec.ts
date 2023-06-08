@@ -1,4 +1,4 @@
-import { Date } from "../src/date.class";
+import { Date } from "../src/header-classes/date.class";
 
 describe("Date", () => {
   it("should build a valid Date header", () => {

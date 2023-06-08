@@ -1,4 +1,4 @@
-import { SecFetchSite } from "../src/sec-fetch-site.class";
+import { SecFetchSite } from "../src/header-classes/sec-fetch-site.class";
 
 describe("SecFetchSite", () => {
   it("builds a SecFetchSite header", () => {

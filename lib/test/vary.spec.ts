@@ -1,4 +1,4 @@
-import { Vary } from "../src/vary.class";
+import { Vary } from "../src/header-classes/vary.class";
 
 describe("Vary", () => {
   it("builds a Vary header", () => {

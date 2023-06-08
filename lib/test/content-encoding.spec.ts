@@ -1,4 +1,4 @@
-import { ContentEncoding } from "../src/content-encoding.class";
+import { ContentEncoding } from "../src/header-classes/content-encoding.class";
 
 describe("ContentEncoding", () => {
   it("builds a ContentEncoding header", () => {

@@ -1,4 +1,4 @@
-import { AcceptPatch } from "../src/accept-patch.class";
+import { AcceptPatch } from "../src/header-classes/accept-patch.class";
 
 describe("AcceptPatch", () => {
   it("should build a valid AcceptPatch header", () => {

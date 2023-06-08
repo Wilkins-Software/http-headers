@@ -1,4 +1,4 @@
-import { Server } from "../src/server.class";
+import { Server } from "../src/header-classes/server.class";
 
 describe("Server", () => {
   it("should build a valid Server header", () => {

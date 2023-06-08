@@ -1,4 +1,4 @@
-import { RetryAfter } from "../src/retry-after.class";
+import { RetryAfter } from "../src/header-classes/retry-after.class";
 
 describe("RetryAfter", () => {
   it("should build a valid RetryAfter header", () => {

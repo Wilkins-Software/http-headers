@@ -1,4 +1,4 @@
-import { AccessControlAllowMethods } from "../src/access-control-allow-methods.class";
+import { AccessControlAllowMethods } from "../src/header-classes/access-control-allow-methods.class";
 
 describe("AccessControlAllowMethods", () => {
   it("builds a AccessControlAllowMethods header", () => {

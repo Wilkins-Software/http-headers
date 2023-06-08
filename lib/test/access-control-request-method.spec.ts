@@ -1,4 +1,4 @@
-import { AccessControlRequestMethods } from "../src/access-control-request-method.class";
+import { AccessControlRequestMethods } from "../src/header-classes/access-control-request-method.class";
 
 describe("AccessControlRequestMethods", () => {
   it("builds a AccessControlRequestMethods header", () => {

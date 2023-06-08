@@ -1,4 +1,4 @@
-import { SecGpc } from "../src/sec-gpc.class";
+import { SecGpc } from "../src/header-classes/sec-gpc.class";
 
 describe("SecGpc", () => {
   it("builds a SecGpc header", () => {

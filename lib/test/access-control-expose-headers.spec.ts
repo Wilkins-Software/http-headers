@@ -1,4 +1,4 @@
-import { AccessControlExposeHeaders } from "../src/access-control-expose-headers.class";
+import { AccessControlExposeHeaders } from "../src/header-classes/access-control-expose-headers.class";
 
 describe("AccessControlExposeHeaders", () => {
   it("builds a AccessControlExposeHeaders header", () => {

@@ -1,4 +1,4 @@
-import { SecFetchDest } from "../src/sec-fetch-dest.class";
+import { SecFetchDest } from "../src/header-classes/sec-fetch-dest.class";
 
 describe("SecFetchDest", () => {
   it("builds a SecFetchDest header", () => {

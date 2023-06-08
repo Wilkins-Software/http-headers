@@ -1,4 +1,4 @@
-import { ContentRange } from "../src/content-range.class";
+import { ContentRange } from "../src/header-classes/content-range.class";
 
 describe("ContentRange", () => {
   it("builds a ContentRange header", () => {

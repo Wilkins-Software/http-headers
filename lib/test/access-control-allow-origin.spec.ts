@@ -1,4 +1,4 @@
-import { AccessControlAllowOrigin } from "../src/access-control-allow-origin.class";
+import { AccessControlAllowOrigin } from "../src/header-classes/access-control-allow-origin.class";
 
 describe("AccessControlAllowOrigin", () => {
   it("builds a AccessControlAllowOrigin header", () => {

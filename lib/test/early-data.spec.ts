@@ -1,4 +1,4 @@
-import { EarlyData } from "../src/early-data.class";
+import { EarlyData } from "../src/header-classes/early-data.class";
 
 describe("EarlyData", () => {
   it("should build a valid EarlyData header", () => {

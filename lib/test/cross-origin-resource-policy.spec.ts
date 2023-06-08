@@ -1,4 +1,4 @@
-import { CrossOriginResourcePolicy } from "../src/cross-origin-resource-policy.class";
+import { CrossOriginResourcePolicy } from "../src/header-classes/cross-origin-resource-policy.class";
 
 describe("CrossOriginResourcePolicy", () => {
   it("should build a valid CrossOriginResourcePolicy header", () => {

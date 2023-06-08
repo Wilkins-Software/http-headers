@@ -1,4 +1,4 @@
-import { SaveData } from "../src/save-data.class";
+import { SaveData } from "../src/header-classes/save-data.class";
 
 describe("SaveData", () => {
   it("should build a valid SaveData header", () => {

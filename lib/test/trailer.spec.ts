@@ -1,4 +1,4 @@
-import { Trailer } from "../src/trailer.class";
+import { Trailer } from "../src/header-classes/trailer.class";
 
 describe("Trailer", () => {
   it("should build a valid Trailer header", () => {

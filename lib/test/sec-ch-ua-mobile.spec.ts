@@ -1,4 +1,4 @@
-import { SecChUaMobile } from "../src/sec-ch-ua-mobile.class";
+import { SecChUaMobile } from "../src/header-classes/sec-ch-ua-mobile.class";
 
 describe("SecChUaMobile", () => {
   it("should build a valid SecChUaMobile header", () => {

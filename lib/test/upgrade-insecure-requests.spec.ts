@@ -1,4 +1,4 @@
-import { UpgradeInsecureRequests } from "../src/upgrade-insecure-requests.class";
+import { UpgradeInsecureRequests } from "../src/header-classes/upgrade-insecure-requests.class";
 
 describe("UpgradeInsecureRequests", () => {
   it("builds a UpgradeInsecureRequests header", () => {

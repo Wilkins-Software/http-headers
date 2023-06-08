@@ -1,4 +1,4 @@
-import { AccessControlAllowCredentials } from "../src/access-control-allow-credentials.class";
+import { AccessControlAllowCredentials } from "../src/header-classes/access-control-allow-credentials.class";
 
 describe("AccessControlAllowCredentials", () => {
   it("should build a valid AccessControlAllowCredentials header", () => {

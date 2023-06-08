@@ -1,4 +1,4 @@
-import { Forwarded } from "../src/forwarded.class";
+import { Forwarded } from "../src/header-classes/forwarded.class";
 
 describe("Forwarded", () => {
   it("builds a Forwarded header", () => {

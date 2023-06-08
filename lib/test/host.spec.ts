@@ -1,4 +1,4 @@
-import { Host } from "../src/host.class";
+import { Host } from "../src/header-classes/host.class";
 
 describe("Host", () => {
   it("builds a Host header", () => {

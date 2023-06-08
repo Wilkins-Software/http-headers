@@ -1,4 +1,4 @@
-import { ContentLanguage } from "../src/content-language.class";
+import { ContentLanguage } from "../src/header-classes/content-language.class";
 
 describe("ContentLanguage", () => {
   it("builds a ContentLanguage header", () => {

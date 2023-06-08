@@ -1,4 +1,4 @@
-import { CriticalCH } from "../src/critical-ch.class";
+import { CriticalCH } from "../src/header-classes/critical-ch.class";
 
 describe("CriticalCH", () => {
   it("builds a CriticalCH header", () => {

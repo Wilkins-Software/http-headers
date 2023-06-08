@@ -1,4 +1,4 @@
-import { Link } from "../src/link.class";
+import { Link } from "../src/header-classes/link.class";
 
 describe("Link", () => {
   it("builds a Link header", () => {
