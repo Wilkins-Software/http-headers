@@ -28,21 +28,21 @@
     "generate-barrels": "npx barrelsby --delete --directory lib -l all"
   },
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^8.2.4",
-    "@typescript-eslint/eslint-plugin": "^5.59.2",
-    "@typescript-eslint/parser": "^5.59.2",
-    "eslint": "^8.39.0",
+    "@size-limit/preset-small-lib": "^8.2.6",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.8.0",
-    "prettier": "2.8.8",
-    "typescript": "^5.0.4",
-    "vite": "^4.3.4",
-    "vitest": "^0.31.0"
+    "prettier": "3.0.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.4",
+    "vitest": "^0.33.0"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.194",
+    "@types/lodash": "^4.14.195",
     "@wilkins-software/time-conversion-helpers": "^0.2.2",
     "lodash": "^4.17.21",
-    "vite-plugin-dts": "^2.3.0"
+    "vite-plugin-dts": "^1.0.5"
   },
   "size-limit": [
     {
