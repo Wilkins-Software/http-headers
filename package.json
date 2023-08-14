@@ -42,7 +42,7 @@
     "@types/lodash": "^4.14.195",
     "@wilkins-software/time-conversion-helpers": "^0.2.2",
     "lodash": "^4.17.21",
-    "vite-plugin-dts": "^1.0.5"
+    "vite-plugin-dts": "^3.5.2"
   },
   "size-limit": [
     {
